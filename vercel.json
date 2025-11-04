@@ -1,18 +1,9 @@
 {
   "version": 2,
-    "builds": [
-    {
-      "src": "api/index.ts",
-      "use": "@vercel/node",
-      "config": {
-        "includeFiles": ["src/**/*"]
-      }
-    }
-  ],
   "routes": [
-    { "src": "/health", "dest": "/api/index.ts" },
-    { "src": "/app/v1/(.*)", "dest": "/api/index.ts" },
-    { "src": "/(.*)", "dest": "/api/index.ts" }
+    { "src": "/health", "destination": "/api/index.ts" },
+    { "src": "/app/v1/(.*)", "destination": "/api/index.ts" },
+    { "src": "/(.*)", "destination": "/api/index.ts" }
   ],
   "functions": {
     "api/index.ts": {
