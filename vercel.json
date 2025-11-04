@@ -2,12 +2,14 @@
   "version": 2,
   "routes": [
     { "src": "/health", "dest": "/api/index.ts" },
+    { "src": "/api/(.*)", "dest": "/api/index.ts" },
     { "src": "/app/v1/(.*)", "dest": "/api/index.ts" },
     { "src": "/(.*)", "dest": "/api/index.ts" }
   ],
   "functions": {
     "api/index.ts": {
       "memory": 1024,
-      "maxDuration": 10
+      "maxDuration": 60
     }
-  }}
+  }
+}
